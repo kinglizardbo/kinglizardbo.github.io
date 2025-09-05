@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KingLizards Colors</title>
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .color-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      text-align: center;
+      overflow: hidden;
+    }
+    .swatch {
+      height: 100px;
+    }
+    .info {
+      padding: 8px;
+    }
+    .fs-code {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Federal standard color codes for <br> WarthunderUserskin making </h1>
+  <p style="text-align:center;">
+    Approximate hex values sourced from MyPerfectColor, W3Schools, NoidaTut, etc.<br>
+    <a href="https://www.federalstandardcolor.com" target="_blank">Original FS color standard</a>
+  </p>
+
+  <div class="color-grid" id="colorGrid"></div>
+
+  <script>
+    const colors = [
+      { fs: "FS 10032", name: "Brown", hex: "#2C1914" },
+      { fs: "FS 10045", name: "Brown", hex: "#523f3e" },
+      { fs: "FS 10049", name: "Maroon", hex: "#421814" },
+      { fs: "FS 10055", name: "Highway Brown", hex: "#633517" },
+      { fs: "FS 10076", name: "Deck Red", hex: "#712617" },
+      { fs: "FS 10080", name: "Seal Brown", hex: "#553a28" },
+      { fs: "FS 10091", name: "Dark Oak", hex: "#773517" },
+      { fs: "FS 10115", name: "Brown", hex: "#9e5d38" },
+      { fs: "FS 10219", name: "Brown", hex: "#926f5d" },
+      { fs: "FS 10233", name: "Cocoa Brown", hex: "#a46d63" },
+      { fs: "FS 10260", name: "Brown", hex: "#cba46a" },
+      { fs: "FS 10266", name: "Middlestone", hex: "#aa824e" },
+      { fs: "FS 10324", name: "Tan", hex: "#af8d81" },
+      { fs: "FS 10371", name: "Buff", hex: "#c78d59" },
+      { fs: "FS 11086", name: "Highway Red", hex: "#a6001a" },
+      { fs: "FS 11105", name: "Safety Red", hex: "#a60117" },
+      { fs: "FS 11120", name: "Safety Red", hex: "#bd1e24" },
+      { fs: "FS 11136", name: "Insignia Red", hex: "#9b0a18" },
+      { fs: "FS 12197", name: "International Orange", hex: "#ce3500" },
+      { fs: "FS 12243", name: "Highway Orange", hex: "#e06000" },
+      { fs: "FS 12246", name: "Safety Orange", hex: "#dc4a00" },
+      { fs: "FS 12300", name: "Safety Orange", hex: "#e97600" },
+      { fs: "FS 13415", name: "School Bus Yellow", hex: "#ee9600" },
+      { fs: "FS 13507", name: "Highway Yellow", hex: "#ffab00" },
+      { fs: "FS 13538", name: "Orange Yellow", hex: "#f8a300" },
+      { fs: "FS 13591", name: "Safety Yellow", hex: "#f6c700" },
+      { fs: "FS 14066", name: "Highway Green", hex: "#004d33" },
+      { fs: "FS 36118", name: "Gunship Gray", hex: "#555B61" },
+      { fs: "FS 34079", name: "Forest Green", hex: "#3C4D34" }
+    ];
+
+    const grid = document.getElementById("colorGrid");
+    colors.forEach(c => {
+      const card = document.createElement("div");
+      card.className = "color-card";
+      card.innerHTML = `
+        <div class="swatch" style="background-color: ${c.hex};"></div>
+        <div class="info">
+          <div class="fs-code">${c.fs}</div>
+          <div>${c.name}</div>
+          <div>Hex: ${c.hex}</div>
+        </div>`;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
